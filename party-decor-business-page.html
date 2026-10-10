@@ -41,7 +41,7 @@
     .service svg{width:32px;height:32px;stroke:var(--peach);margin-bottom:45px}.service h3{font-size:1.55rem;margin-bottom:12px}.service p{font-size:.94rem;opacity:.72;margin:0}
     .gallery{padding-bottom:80px}.masonry{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}.mood{margin:0;position:relative}.mood img{height:480px;object-fit:cover}.mood figcaption{display:flex;justify-content:space-between;gap:12px;padding:12px 2px;color:var(--muted);font-size:.85rem}.mood strong{color:var(--ink)}.mood a{white-space:nowrap}
     .process{background:var(--soft)}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}.step{padding:32px 36px 10px 0}.step+.step{padding-left:36px;border-left:1px solid var(--line)}.num{font-family:"Playfair Display",serif;font-size:3.4rem;color:var(--rose);line-height:1}.step h3{font-size:1.5rem;margin:18px 0 10px}.step p{color:var(--muted);margin:0}
-    .quote-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:72px}.quote-copy h2{font-size:clamp(3rem,5vw,5rem);letter-spacing:-.04em}.quote-copy p{color:var(--muted)}.contact-lines{margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}.contact-lines span{display:block;color:var(--muted);font-size:.8rem}.contact-lines a{font-weight:700;text-decoration:none}
+    .quote-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:72px}.quote-copy h2{font-size:clamp(3rem,5vw,5rem);letter-spacing:-.04em}.quote-copy p{color:var(--muted)}.contact-lines{margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}.contact-lines span{display:block;color:var(--muted);font-size:.8rem}.contact-lines a{font-weight:700;text-decoration:none}.contact-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.contact-actions .button{padding:11px 15px}.contact-actions svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.contact-actions .whatsapp{background:#167f50;border-color:#167f50;color:#fff}.contact-actions .instagram{background:var(--ink);border-color:var(--ink);color:var(--paper)}
     .demo-note{margin-top:18px;font-size:.78rem;color:var(--muted);background:var(--soft);padding:10px 12px}.form{display:grid;grid-template-columns:1fr 1fr;gap:18px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:.8rem;font-weight:800}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:13px 14px;border-radius:8px;outline:none}.field textarea{min-height:112px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--rose);box-shadow:0 0 0 3px color-mix(in srgb,var(--rose) 18%,transparent)}
     .submit-row{grid-column:1/-1;display:flex;align-items:center;gap:14px;flex-wrap:wrap}.submit-row button{border:0;cursor:pointer}.submit-row button:disabled{cursor:wait;opacity:.7}.status{font-size:.86rem;color:var(--muted);min-height:1.4em}
     footer{padding:32px clamp(20px,5vw,72px);border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:.82rem}.footer-links{display:flex;gap:18px}
@@ -108,6 +108,10 @@
         <div class="quote-copy">
           <p class="eyebrow">Let’s celebrate</p><h2>Tell us what you’re dreaming up.</h2><p>Send your event details directly and we’ll use them to start your custom quote.</p>
           <div class="contact-lines"><span>Owner</span><strong>Anmisha Eralla</strong><br><br><span>Call or text</span><a href="tel:+19402992992">(940) 299-2992</a><br><br><span>Email</span><a href="mailto:moonlightdecorsaz@gmail.com">moonlightdecorsaz@gmail.com</a></div>
+          <div class="contact-actions" aria-label="Social contact links">
+            <a class="button instagram" href="https://www.instagram.com/moonlight_decors_az" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>Instagram</a>
+            <a class="button whatsapp" href="https://wa.me/19402992992?text=Hi%20Moonlight%20Decors%20AZ!%20I%27d%20like%20to%20inquire%20about%20decor%20for%20my%20event" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M9 8.5c.4 2.2 2.3 4.1 4.5 4.5l1.3-1.3c.2-.2.5-.3.8-.1l2 .9"/></svg>WhatsApp</a>
+          </div>
         </div>
         <form class="form" id="planner">
           <div class="field"><label for="name">Your name</label><input id="name" name="Name" autocomplete="name" placeholder="Name" /></div>
@@ -120,7 +124,7 @@
       </div>
     </section>
   </main>
-  <footer><span>Serving the Phoenix metro—including Chandler, Glendale &amp; Peoria—and all of Arizona</span><div class="footer-links"><a href="#services">Services</a><a href="#quote">Contact</a></div></footer>
+  <footer><span>Serving the Phoenix metro—including Chandler, Glendale &amp; Peoria—and all of Arizona</span><div class="footer-links"><a href="#services">Services</a><a href="#quote">Contact</a><a href="https://www.instagram.com/moonlight_decors_az" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://wa.me/19402992992?text=Hi%20Moonlight%20Decors%20AZ!%20I%27d%20like%20to%20inquire%20about%20decor%20for%20my%20event" target="_blank" rel="noopener noreferrer">WhatsApp</a></div></footer>
 
   <script>
     (function(){
