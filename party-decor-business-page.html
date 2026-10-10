@@ -43,7 +43,7 @@
     .process{background:var(--soft)}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}.step{padding:32px 36px 10px 0}.step+.step{padding-left:36px;border-left:1px solid var(--line)}.num{font-family:"Playfair Display",serif;font-size:3.4rem;color:var(--rose);line-height:1}.step h3{font-size:1.5rem;margin:18px 0 10px}.step p{color:var(--muted);margin:0}
     .quote-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:72px}.quote-copy h2{font-size:clamp(3rem,5vw,5rem);letter-spacing:-.04em}.quote-copy p{color:var(--muted)}.contact-lines{margin-top:30px;padding-top:22px;border-top:1px solid var(--line)}.contact-lines span{display:block;color:var(--muted);font-size:.8rem}.contact-lines a{font-weight:700;text-decoration:none}.contact-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.contact-actions .button{padding:11px 15px}.contact-actions svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.contact-actions .whatsapp{background:#167f50;border-color:#167f50;color:#fff}.contact-actions .instagram{background:var(--ink);border-color:var(--ink);color:var(--paper)}
     .demo-note{margin-top:18px;font-size:.78rem;color:var(--muted);background:var(--soft);padding:10px 12px}.form{display:grid;grid-template-columns:1fr 1fr;gap:18px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:.8rem;font-weight:800}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:13px 14px;border-radius:8px;outline:none}.field textarea{min-height:112px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--rose);box-shadow:0 0 0 3px color-mix(in srgb,var(--rose) 18%,transparent)}
-    .submit-row{grid-column:1/-1;display:flex;align-items:center;gap:14px;flex-wrap:wrap}.submit-row button{border:0;cursor:pointer}.submit-row button:disabled{cursor:wait;opacity:.7}.status{font-size:.86rem;color:var(--muted);min-height:1.4em}
+    .submit-row{grid-column:1/-1;display:flex;align-items:center;gap:14px;flex-wrap:wrap}.submit-row button{border:0;cursor:pointer}.submit-row button:disabled{cursor:wait;opacity:.7}.status{font-size:.86rem;color:var(--muted);min-height:1.4em}.status.error{color:var(--rose-dark);font-weight:700}
     footer{padding:32px clamp(20px,5vw,72px);border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:.82rem}.footer-links{display:flex;gap:18px}
     @media(max-width:900px){.nav a:not(.book){display:none}.hero{grid-template-columns:1fr;min-height:0;padding-top:54px}.hero-photo{max-width:650px}.hero-photo img{height:560px}.service-grid{grid-template-columns:1fr 1fr}.service:nth-child(2){border-right:0}.service:nth-child(3),.service:nth-child(4){border-top:1px solid color-mix(in srgb,currentColor 25%,transparent)}.masonry{grid-template-columns:1fr 1fr}.mood:first-child{grid-row:auto}.mood:first-child img,.mood img,.mood video{height:380px}.quote-grid{grid-template-columns:1fr;gap:42px}}
     @media(max-width:600px){.nav{padding:10px 16px}.hero{padding:36px 20px 70px;gap:38px}.hero h1{font-size:3.5rem}.hero-photo img{height:455px;border-radius:44% 56% 49% 51% / 39% 42% 58% 61%}.photo-label{left:10px;bottom:16px}.hero-photo:before{right:-8px;width:105px;height:105px}.hero-photo:after{left:-5px;width:80px;height:80px}.section-head{display:block}.section-head h2{margin-bottom:18px}.service-grid,.steps,.masonry{grid-template-columns:1fr}.service,.service:not(:first-child){padding:28px 0;border-right:0;border-left:0;border-top:1px solid color-mix(in srgb,currentColor 25%,transparent)}.service svg{margin-bottom:22px}.mood:first-child img,.mood img,.mood video{height:390px}.steps{border-top:0}.step,.step+.step{padding:24px 0;border-left:0;border-top:1px solid var(--line)}.form{grid-template-columns:1fr}.field.full,.submit-row{grid-column:1}.button{justify-content:center}.actions{flex-direction:column;align-items:stretch}.quote-grid{gap:34px}footer{flex-direction:column}.footer-links{flex-wrap:wrap}}
@@ -117,9 +117,9 @@
           </div>
         </div>
         <form class="form" id="planner">
-          <div class="field"><label for="name">Your name</label><input id="name" name="Name" autocomplete="name" placeholder="Name" /></div>
-          <div class="field"><label for="date">Event date</label><input id="date" name="Event date" type="date" /></div>
-          <div class="field"><label for="occasion">Occasion</label><select id="occasion" name="Occasion"><option>Birthday</option><option>Baby shower</option><option>Engagement</option><option>Graduation</option><option>Anniversary</option><option>Other celebration</option></select></div>
+          <div class="field"><label for="name">Your name</label><input id="name" name="Name" autocomplete="name" placeholder="Name" required /></div>
+          <div class="field"><label for="date">Event date</label><input id="date" name="Event date" type="date" required /></div>
+          <div class="field"><label for="occasion">Occasion</label><select id="occasion" name="Occasion" required><option>Birthday</option><option>Baby shower</option><option>Engagement</option><option>Graduation</option><option>Anniversary</option><option>Other celebration</option></select></div>
           <div class="field"><label for="guests">Estimated guests</label><input id="guests" name="Estimated guests" type="number" min="1" inputmode="numeric" placeholder="40" /></div>
           <div class="field full"><label for="details">Theme, colors &amp; must-haves</label><textarea id="details" name="Theme, colors &amp; must-haves" placeholder="Example: sage and cream, organic balloon garland, round backdrop and cake plinths"></textarea></div>
           <div class="submit-row"><button class="button primary" type="submit">Send inquiry</button><span class="status" id="status" role="status" aria-live="polite"></span></div>
@@ -171,8 +171,33 @@
           if(event.key==='Enter'||event.key===' '){event.preventDefault();togglePlayback();}
         });
       });
+      function showMissingFields(){
+        var missing=[];
+        if(!form.elements['Name'].value.trim()){missing.push('your name');}
+        if(!form.elements['Event date'].value){missing.push('the event date');}
+        if(!form.elements['Occasion'].value){missing.push('the occasion');}
+        if(!missing.length){
+          status.textContent='';
+          status.classList.remove('error');
+          return;
+        }
+        var last=missing.pop();
+        status.textContent='Please add '+(missing.length?missing.join(', ')+' and ':'')+last+' before sending.';
+        status.classList.add('error');
+      }
+      button.addEventListener('click',showMissingFields);
+      form.addEventListener('invalid',showMissingFields,true);
+      form.addEventListener('input',function(){
+        if(status.classList.contains('error')){showMissingFields();}
+      });
       form.addEventListener('submit',function(e){
         e.preventDefault();
+        if(!form.checkValidity()){
+          showMissingFields();
+          form.reportValidity();
+          return;
+        }
+        status.classList.remove('error');
         button.disabled=true;
         button.textContent='Sending…';
         status.textContent='Sending your inquiry…';
