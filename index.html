@@ -2,10 +2,18 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="refresh" content="0; url=party-decor-business-page.html">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Moonlight Decors AZ</title>
+<noscript><meta http-equiv="refresh" content="0; url=party-decor-business-page.html"></noscript>
+<style>body{font-family:system-ui,sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;color:#555}</style>
 </head>
 <body>
-<p>If you are not redirected, <a href="party-decor-business-page.html">click here to visit Moonlight Decors AZ</a>.</p>
+<p>Loading Moonlight Decors AZ&hellip;</p>
+<script>
+fetch('party-decor-business-page.html')
+  .then(function(r){ if(!r.ok) throw new Error('load failed'); return r.text(); })
+  .then(function(html){ document.open(); document.write(html); document.close(); })
+  .catch(function(){ window.location.replace('party-decor-business-page.html'); });
+</script>
 </body>
 </html>
