@@ -135,8 +135,31 @@
       document.querySelectorAll('.gallery video').forEach(function(video){
         video.muted=true;
         video.defaultMuted=true;
-        var playback=video.play();
-        if(playback&&playback.catch){playback.catch(function(){});}
+        var mimeFixed=false;
+        function playVideo(){
+          var playback=video.play();
+          if(playback&&playback.catch){playback.catch(function(){});}
+        }
+        function ensureMp4Mime(){
+          var source=video.getAttribute('src')||'';
+          if(!source||mimeFixed){return;}
+          if(source.indexOf('data:application/octet-stream')===0){
+            mimeFixed=true;
+            video.src=source.replace('data:application/octet-stream','data:video/mp4');
+            video.load();
+            playVideo();
+          }else if(source.indexOf('blob:')===0){
+            mimeFixed=true;
+            fetch(source).then(function(response){return response.arrayBuffer();}).then(function(bytes){
+              video.src=URL.createObjectURL(new Blob([bytes],{type:'video/mp4'}));
+              video.load();
+              playVideo();
+            }).catch(function(){mimeFixed=false;});
+          }
+        }
+        new MutationObserver(ensureMp4Mime).observe(video,{attributes:true,attributeFilter:['src']});
+        ensureMp4Mime();
+        playVideo();
         function togglePlayback(){
           if(video.paused){
             var resumed=video.play();
